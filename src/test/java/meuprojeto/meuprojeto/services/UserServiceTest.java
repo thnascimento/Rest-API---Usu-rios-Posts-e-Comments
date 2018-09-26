@@ -67,7 +67,7 @@ public class UserServiceTest {
 
         when(userRepository.findById("123")).thenReturn(Optional.empty());
 
-        User user1 = userService.findById("123");
+        userService.findById("123");
     }
 
     @Test
@@ -88,6 +88,6 @@ public class UserServiceTest {
 
         User user2 = this.userService.update(user1);
 
-        assertEquals("Thiago123", user2.getName());
+        assertEquals(user1, user2);
     }
 }
